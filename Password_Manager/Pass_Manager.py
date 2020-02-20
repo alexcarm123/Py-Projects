@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
-import tkinter.messagebox
+import tkinter
 
 
 objects = []
@@ -18,11 +18,11 @@ class popupWindow(object):
         top.title('Input Password')
         top.geometry('{}x{}'.format(250,100))
         top.resizable(width=False, height=False)
-        self.l = Label(top, text=" Password: ", font=('Courier', 14), justify=CENTER)
+        self.l = Label(top, text=" Password: ", font=('Arial', 14), justify=CENTER)
         self.l.pack()
         self.e = Entry(top, show='*', width=30)
         self.e.pack(pady=7)
-        self.b = Button(top, text='Submit', command=self.cleanup, font=('Courier', 14))
+        self.b = Button(top, text='Submit', command=self.cleanup, font=('Arial', 14))
         self.b.pack()
     def cleanup(self):
         self.value = self.e.get()
@@ -110,9 +110,9 @@ class entity_display:
             else:
                 dencryptedP += chr(ord(letter) - 5)
 
-        self.label_name = Label(self.window, text=dencryptedN, font=('Courier', 14))
-        self.label_username = Label(self.window, text=dencryptedE, font=('Courier', 14))
-        self.label_pass = Label(self.window, text=dencryptedP, font=('Courier', 14))
+        self.label_name = Label(self.window, text=dencryptedN, font=('Arial', 14))
+        self.label_username = Label(self.window, text=dencryptedE, font=('Arial', 14))
+        self.label_pass = Label(self.window, text=dencryptedP, font=('Arial', 14))
         self.deleteButton = Button(self.window, text='X', fg='red', command=self.delete)
 
     def display(self):
@@ -188,14 +188,14 @@ def readfile():
 
 m = popupWindow(window)
 
-entity_label = Label(window, text='Add Entity', font=('Courier', 18))
-name_label = Label(window, text='Name: ', font=('Courier', 14))
-username_label = Label(window, text='Username: ', font=('Courier', 14))
-pass_label = Label(window, text='Password: ', font=('Courier', 14))
-name = Entry(window, font=('Courier', 14))
-username = Entry(window, font=('Courier', 14))
-password = Entry(window, show='*', font=('Courier', 14))
-submit = Button(window, text='Add User', command=onsubmit, font=('Courier', 14))
+entity_label = Label(window, text='Add Entity', font=('Arial', 18))
+name_label = Label(window, text='Name: ', font=('Arial', 14))
+username_label = Label(window, text='Username: ', font=('Arial', 14))
+pass_label = Label(window, text='Password: ', font=('Arial', 14))
+name = Entry(window, font=('Arial', 14))
+username = Entry(window, font=('Arial', 14))
+password = Entry(window, show='*', font=('Arial', 14))
+submit = Button(window, text='Add User', command=onsubmit, font=('Arial', 14))
 
 entity_label.grid(columnspan=3, row=0)
 name_label.grid(row=1, sticky=E, padx=3)
@@ -208,9 +208,9 @@ password.grid(columnspan=3, row=3, column=1, padx=2, pady=2, sticky=W)
 
 submit.grid(columnspan=3, pady=4)
 
-name_label2 = Label(window, text='Name: ', font=('Courier', 14))
-username_label2 = Label(window, text='Username: ', font=('Courier', 14))
-pass_label2 = Label(window, text='Password: ', font=('Courier', 14))
+name_label2 = Label(window, text='Name: ', font=('Arial', 14))
+username_label2 = Label(window, text='Username: ', font=('Arial', 14))
+pass_label2 = Label(window, text='Password: ', font=('Arial', 14))
 
 name_label2.grid(row=5)
 username_label2.grid(row=5, column=1)
